@@ -35,6 +35,7 @@ function Single_Drawing() {
   const { id } = useParams();
   const canvasRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [deleteLoading, setDeleteLoading] = useState(false);
   const { toast } = useToast();
   const [title, setTitle] = useState("Untitled drawing");
   const [tool, setTool] = useState("straight");
@@ -236,7 +237,7 @@ function Single_Drawing() {
           </div>
           <button
             onClick={() => {
-              deleteDrawing({ id, setIsLoading, navigate });
+              deleteDrawing({ id, setDeleteLoading, navigate });
               toast({
                 className: "bg-gray-50 text-green-700 fixed top-5 right-5 w-80",
                 variant: "success",
@@ -248,7 +249,7 @@ function Single_Drawing() {
             type="button"
             className="px-6 py-3 w-24 text-base font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 flex justify-center items-center"
           >
-            {isLoading ? <Spinner_Component /> : "Delete"}
+            {deleteLoading ? <Spinner_Component /> : "Delete"}
           </button>
         </div>
       </main>
