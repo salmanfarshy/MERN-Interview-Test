@@ -24,7 +24,6 @@ import createDrawing from "../Functions/createDrawing.js";
 // clearing the draw function
 import clearDrawing from "../Functions/clearDrawing.js";
 
-import { useToast } from "../hooks/use-toast.js";
 import ColorTools_Component from "../Components/ColorTools_Component.jsx";
 import LineTools_Component from "../Components/LineTools_Component.jsx";
 import ShapeTools_Component from "../Components/ShapeTools_Component.jsx";
@@ -38,7 +37,6 @@ function Single_Drawing() {
   const canvasRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
-  const { toast } = useToast();
   const [title, setTitle] = useState("Untitled drawing");
   const [tool, setTool] = useState("straight");
   const [color, setColor] = useState("black");
@@ -226,16 +224,7 @@ function Single_Drawing() {
             {isLoading ? <Loading_Component title="Updating" /> : "Updated"}
           </div>
           <button
-            onClick={() => {
-              deleteDrawing({ id, setDeleteLoading, navigate });
-              toast({
-                className: "bg-gray-50 text-green-700 fixed top-5 right-5 w-80",
-                variant: "success",
-                title: "Success",
-                description: "Drawing has been deleted.",
-                duration: 2000,
-              });
-            }}
+            onClick={() => deleteDrawing({ id, setDeleteLoading, navigate }) }
             type="button"
             className="px-6 py-3 w-24 text-base font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 flex justify-center items-center"
           >
@@ -250,4 +239,10 @@ function Single_Drawing() {
   );
 }
 
-export default Single_Drawing;
+export default Single_Drawing;             
+
+
+
+
+
+
