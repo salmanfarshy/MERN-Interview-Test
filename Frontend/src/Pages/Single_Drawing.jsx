@@ -131,9 +131,7 @@ function Single_Drawing() {
             <h5 className="font-mono">Clear</h5>
             <div className="grid grid-cols-1">
               <button
-                onClick={() =>
-                  clearDrawing({elements, title, id, settlements, setIsLoading});
-                }
+                onClick={() => clearDrawing({elements, title, id, setElements, setIsLoading}) }
                 className="w-10 h-5 bg-gray-50 border border-gray-400 flex justify-center items-center hover:border-2 hover:border-cyan-500 hover:bg-gray-300 transition-all delay-75 ease-out"
               >
                 <img className="w-6" src={clear_icon} alt="straight_line" />
