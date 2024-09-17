@@ -1,11 +1,11 @@
 import apiRequest from "./apiRequest";
 
-const deleteDrawing = async ({ id, setIsLoading, navigate }) => {
-  setIsLoading(true);
+const deleteDrawing = async ({ id, setDeleteLoading, navigate }) => {
+  setDeleteLoading(true);
   await apiRequest.post("/delete-drawing", {
     id,
   });
-  setIsLoading(false);
+  setDeleteLoading(false);
   navigate("/");
 };
 
