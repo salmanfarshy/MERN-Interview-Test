@@ -132,7 +132,7 @@ function Single_Drawing() {
             <div className="grid grid-cols-1">
               <button
                 onClick={() =>
-                  clearDrawing({elements, title, id, setElements});
+                  clearDrawing({elements, title, id, settlements, setIsLoading});
                 }
                 className="w-10 h-5 bg-gray-50 border border-gray-400 flex justify-center items-center hover:border-2 hover:border-cyan-500 hover:bg-gray-300 transition-all delay-75 ease-out"
               >
