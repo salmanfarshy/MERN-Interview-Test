@@ -14,13 +14,15 @@ import handleMouseUp from "../Functions/handleMouseUp.js";
 // element's drawing function
 import drawElement from "../Functions/drawElement.js";
 // deleting drawing function
-import deleteDrawing from "@/Functions/deleteDrawing.js";
+import deleteDrawing from "../Functions/deleteDrawing.js";
 // updating title of a drawing function
-import updateTitle from "@/Functions/updateTitle.js";
+import updateTitle from "../Functions/updateTitle.js";
 // getting a single drawing function
-import getDrawing from "@/Functions/getDrawing.js";
+import getDrawing from "../Functions/getDrawing.js";
 // creating a new drawing function
-import createDrawing from "@/Functions/createDrawing.js";
+import createDrawing from "../Functions/createDrawing.js";
+// clearing the draw function
+import clearDrawing from "../Functions/clearDrawing.js";
 
 import { useToast } from "../hooks/use-toast.js";
 import ColorTools_Component from "../Components/ColorTools_Component.jsx";
@@ -130,17 +132,7 @@ function Single_Drawing() {
             <div className="grid grid-cols-1">
               <button
                 onClick={() =>
-                  setElements([
-                    {
-                      lines: [],
-                    },
-                    {
-                      shapes: [],
-                    },
-                    {
-                      texts: [],
-                    },
-                  ])
+                  clearDrawing({elements, title, id, setElements});
                 }
                 className="w-10 h-5 bg-gray-50 border border-gray-400 flex justify-center items-center hover:border-2 hover:border-cyan-500 hover:bg-gray-300 transition-all delay-75 ease-out"
               >
