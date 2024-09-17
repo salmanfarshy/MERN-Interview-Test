@@ -1,6 +1,6 @@
 import apiRequest from "./apiRequest";
 
-const clearDrawing = async ({elements, title, id, settlements, setIsLoading}) => {
+const clearDrawing = async ({elements, title, id, setElements, setIsLoading}) => {
   setIsLoading(true);
   setElements([
       {
